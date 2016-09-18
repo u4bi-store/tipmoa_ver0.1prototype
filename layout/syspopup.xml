@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_centerInParent="true"
+    android:layout_width="300dip"
+    android:layout_height="240dip"
+    android:background="#50FFFFFF">
+
+    <TextView
+        android:id="@+id/sys_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="설정창"
+        style="@style/text_style"
+        android:textSize="25sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/sys_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button_style"
+        android:text="설정"
+        android:textSize="25sp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="btnClick"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/sys_main"
+        android:layout_above="@id/sys_button">
+
+        <TextView
+            android:id="@+id/sys_main2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="백업시간"
+            style="@style/text_style"
+            android:textSize="20sp"
+            android:paddingBottom="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:layout_toRightOf="@+id/sys_main2"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/sys_main3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="푸시알림"
+            style="@style/text_style"
+            android:textSize="20sp"
+            android:layout_below="@id/sys_main2"
+            android:paddingBottom="10dp"/>
+        <TextView
+            android:id="@+id/sys_main4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="진동설정"
+            style="@style/text_style"
+            android:textSize="20sp"
+            android:layout_below="@id/sys_main3"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/sys_main5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="친구초대"
+            style="@style/text_style"
+            android:textSize="20sp"
+            android:layout_below="@id/sys_main4"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새로시작"
+            style="@style/text_style"
+            android:textSize="20sp"
+            android:layout_below="@id/sys_main5"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

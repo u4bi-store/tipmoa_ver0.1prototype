@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#59616a"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/info_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tipmoa_logo"
+            android:layout_centerInParent="true"
+            android:onClick="btnClick"/>
+
+        <TextView
+            android:id="@+id/info_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="누적팁 : 130000원"
+            style="@style/text_style"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/info_logo"/>
+
+        <TextView
+            android:id="@+id/info_io"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/text_style"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="90dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right">
+
+        <Button
+            android:id="@+id/info_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수입"
+            style="@style/button_style"
+            android:onClick="btnClick"/>
+
+        <Button
+            android:id="@+id/info_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지출"
+            style="@style/button2_style"
+            android:onClick="btnClick"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/info_calen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2016년 05월 13일 팁내역보기"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/tipinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </ListView>
+
+    <TextView
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메모 내역보기"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/memoinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_centerInParent="true"
+    android:layout_width="300dip"
+    android:layout_height="240dip"
+    android:background="#50FFFFFF">
+
+    <EditText
+        android:id="@+id/memo_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:text=""
+        android:hint="메모하실 내용을 입력해주세요."
+        android:textColorHint="#878787"
+        android:gravity="top"/>
+    <Button
+        android:id="@+id/memo_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button2_style"
+        android:text="작성완료"
+        android:textSize="25sp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="btnClick"/>
+
+</RelativeLayout>
