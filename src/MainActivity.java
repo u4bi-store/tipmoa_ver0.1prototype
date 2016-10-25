@@ -227,62 +227,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnClick(View view) {
-        if(view.getId()== R.id.button_price1){
-            GiveSendTip(1000);
-
-        }else if(view.getId()== R.id.button_price2){
-            GiveSendTip(5000);
-
-        }else if(view.getId()== R.id.button_price3){
-            GiveSendTip(10000);
-
-        }else if(view.getId()== R.id.button_price4){
-            GiveSendTip(30000);
-
-        }else if(view.getId()== R.id.button_price5){
-            GiveSendTip(50000);
-
-        }else if(view.getId()== R.id.button_price6){
-            GiveSendTip(100000);
-
-        }else if(view.getId()== R.id.button_ok){
-            if(getSendPrice()==0){
-                Toast.makeText(this,"입력하신 금액이 없습니다.",Toast.LENGTH_SHORT).show();
-                return;
+        switch(view.getId()){
+            case R.id.button_price1: GiveSendTip(1000);
+            case R.id.button_price2: GiveSendTip(5000);
+            case R.id.button_price3: GiveSendTip(10000);
+            case R.id.button_price4: GiveSendTip(30000);
+            case R.id.button_price5: GiveSendTip(50000);
+            case R.id.button_price6: GiveSendTip(100000);
+            case R.id.button_ok :{
+                
+                if(getSendPrice()==0) return Toast.makeText(this,"입력하신 금액이 없습니다.",Toast.LENGTH_SHORT).show();
+                
+                Toast.makeText(this,getSendPrice()+"원 정상등록 되었습니다.",Toast.LENGTH_SHORT).show();
+                long now = System.currentTimeMillis();
+                Date date = new Date(now);
+                SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm");
+                String strNow = sdfNow.format(date);
+                boolean tipInOutPut;
+                
+                if(getSendPrice() < 0)tipInOutPut=false;
+                else tipInOutPut=true;
+                
+                insert(getSendPrice(),strNow,tipInOutPut);
+                GiveTotalTip(getSendPrice());
+                setSendPrice(0);
+                textView[0].setText(getSendPrice()+"원");
             }
-            Toast.makeText(this,getSendPrice()+"원 정상등록 되었습니다.",Toast.LENGTH_SHORT).show();
-            long now = System.currentTimeMillis();
-            Date date = new Date(now);
-            SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm");
-            String strNow = sdfNow.format(date);
-            boolean tipInOutPut;
-            if(getSendPrice() < 0){
-                tipInOutPut=false;
-            }else{
-                tipInOutPut=true;
+            case R.id.button_no :{
+                setSendPrice(0);
+                textView[0].setText(getSendPrice()+"원");
             }
-            insert(getSendPrice(),strNow,tipInOutPut);
-            GiveTotalTip(getSendPrice());
-            setSendPrice(0);
-            textView[0].setText(getSendPrice()+"원");
-        }else if(view.getId()== R.id.button_no){
-            setSendPrice(0);
-            textView[0].setText(getSendPrice()+"원");
-
-        }else if(view.getId()== R.id.button_info){
-            intent=new Intent(this, InfoActivity.class);
-            intent.putExtra("tiptitle",getInfoRegdate());
-            startActivityForResult(intent,REQUEST_CODE);
-
-        }else if(view.getId()== R.id.button_calendar){
-            Intent intent = new Intent(this, CalenDialog.class);
-            startActivity(intent);
-
-        }else if(view.getId()== R.id.button_memo){
-            Intent intent = new Intent(this, WebDialog.class);
-            startActivity(intent);
+            case R.id.button_info:{
+                intent=new Intent(this, InfoActivity.class);
+                intent.putExtra("tiptitle",getInfoRegdate());
+                startActivityForResult(intent,REQUEST_CODE);
+            }
+            case R.id.button_calendar:{
+                Intent intent = new Intent(this, CalenDialog.class);
+                startActivity(intent);
+            }
+            case R.id.button_memo:{
+                Intent intent = new Intent(this, WebDialog.class);
+                startActivity(intent);
+            }
         }
-
     }
 
 }
